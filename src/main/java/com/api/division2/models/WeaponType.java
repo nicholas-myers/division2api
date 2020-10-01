@@ -16,6 +16,10 @@ public class WeaponType
    @Column(nullable = false, unique = true)
    private String name;
 
+   public WeaponType()
+   {
+   }
+
    public WeaponType(String name)
    {
       this.name = name;
