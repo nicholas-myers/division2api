@@ -24,9 +24,58 @@ public class WeaponTalent
    @ManyToMany
    @JoinTable(
            name = "talenttypes",
-           joinColumns = @JoinColumn(name = "weaponTalentId"),
-           inverseJoinColumns = @JoinColumn(name = "weaponTypeId"))
+           joinColumns = @JoinColumn(name = "weaponTypeId"),
+           inverseJoinColumns = @JoinColumn(name = "weaponTalentId"))
    private List<WeaponType> weaponTypes;
 
+   public WeaponTalent()
+   {
+   }
 
+   public WeaponTalent(String name, String description)
+   {
+      this.name = name;
+      this.description = description;
+      this.weaponTypes = weaponTypes;
+   }
+
+   public long getWeaponTalentId()
+   {
+      return weaponTalentId;
+   }
+
+   public void setWeaponTalentId(long weaponTalentId)
+   {
+      this.weaponTalentId = weaponTalentId;
+   }
+
+   public String getName()
+   {
+      return name;
+   }
+
+   public void setName(String name)
+   {
+      this.name = name;
+   }
+
+   public String getDescription()
+   {
+      return description;
+   }
+
+   public void setDescription(String description)
+   {
+      this.description = description;
+   }
+
+   public List<WeaponType> getWeaponTypes()
+   {
+      return weaponTypes;
+   }
+
+   public void setWeaponTypes(List<WeaponType> weaponTypes)
+   {
+      this.weaponTypes = weaponTypes;
+   }
 }
