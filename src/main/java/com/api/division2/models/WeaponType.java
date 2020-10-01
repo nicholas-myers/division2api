@@ -3,6 +3,7 @@ package com.api.division2.models;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "weapontypes")
@@ -15,6 +16,9 @@ public class WeaponType
    @NotNull
    @Column(nullable = false, unique = true)
    private String name;
+
+   @ManyToMany(mappedBy = "weaponTypes")
+   private List<WeaponTalent> weaponTalents;
 
    public WeaponType()
    {
