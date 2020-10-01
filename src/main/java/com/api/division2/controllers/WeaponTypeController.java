@@ -18,7 +18,7 @@ public class WeaponTypeController
    @Autowired
    private WeaponTypeService weaponTypeService;
 
-   @GetMapping(value = "/weaponTypes", produces = {"application/json"})
+   @GetMapping(value = "/all", produces = {"application/json"})
    public ResponseEntity<?> getAllWeaponTypes()
    {
       List<WeaponType> allWeaponTypes = weaponTypeService.findAllWeaponTypes();
