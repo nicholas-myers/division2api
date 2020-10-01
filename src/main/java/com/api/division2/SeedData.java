@@ -44,11 +44,13 @@ public class SeedData implements CommandLineRunner
       shotgun = weaponTypeService.save(shotgun);
 
       /******* WEAPON TALENTS ********/
-      List<WeaponType> weaponTypes = new ArrayList<>();
-      weaponTypes.add(rifle);
       WeaponTalent boomerang = new WeaponTalent("Boomerang", "Critical hits have a 50% chance to return the bullet to the magazine. If a bullet is returned to the magazine, the next shot has 40% increased damage.");
-      boomerang.setWeaponTypes(weaponTypes);
       boomerang = weaponTalentService.save(boomerang);
-
+      WeaponTalent breadbasket = new WeaponTalent("Breadbasket", "Landing body shots adds a stack of bonus 35% headshot damage to the next headshot for 10 seconds. Max stack is 3.");
+      breadbasket = weaponTalentService.save(breadbasket);
+      WeaponTalent closepersonal = new WeaponTalent("Close and Personal", "Killing a target within 7 meters grants 30% weapon damage for 10 seconds.");
+      closepersonal = weaponTalentService.save(closepersonal);
+      WeaponTalent eyeless = new WeaponTalent("Eyless", "Deal 20% weapon damage to blinded enemies. After 4 kills, applies blind to the next enemy you hit.");
+      eyeless = weaponTalentService.save(eyeless);
    }
 }
