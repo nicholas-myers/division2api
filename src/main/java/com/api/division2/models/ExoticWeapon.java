@@ -22,16 +22,26 @@ public class ExoticWeapon
    @NotNull
    @Column(nullable = false,
            unique = true)
-   private String talent;
+   private String exoticTalentName;
 
    @NotNull
-   @Column(nullable = false)
-   private String weaponType;
+   @Column(nullable = false,
+           unique = true)
+   private String exoticTalentDescription;
 
-   public ExoticWeapon(String exoticWeaponName, String talent, String weaponType)
+   @ManyToOne
+   @JoinColumn(name = "weaponTypeId")
+   private WeaponType weaponType;
+
+   public ExoticWeapon()
+   {
+   }
+
+   public ExoticWeapon(String exoticWeaponName, String exoticTalentName, String exoticTalentDescription, WeaponType weaponType)
    {
       this.exoticWeaponName = exoticWeaponName;
-      this.talent = talent;
+      this.exoticTalentName = exoticTalentName;
+      this.exoticTalentDescription = exoticTalentDescription;
       this.weaponType = weaponType;
    }
 
@@ -55,22 +65,32 @@ public class ExoticWeapon
       this.exoticWeaponName = exoticWeaponName;
    }
 
-   public String getTalent()
+   public String getExoticTalentName()
    {
-      return talent;
+      return exoticTalentName;
    }
 
-   public void setTalent(String talent)
+   public void setExoticTalentName(String exoticTalentName)
    {
-      this.talent = talent;
+      this.exoticTalentName = exoticTalentName;
    }
 
-   public String getWeaponType()
+   public String getExoticTalentDescription()
+   {
+      return exoticTalentDescription;
+   }
+
+   public void setExoticTalentDescription(String exoticTalentDescription)
+   {
+      this.exoticTalentDescription = exoticTalentDescription;
+   }
+
+   public WeaponType getWeaponType()
    {
       return weaponType;
    }
 
-   public void setWeaponType(String weaponType)
+   public void setWeaponType(WeaponType weaponType)
    {
       this.weaponType = weaponType;
    }
