@@ -30,7 +30,8 @@ public class ExoticWeaponServiceImpl implements ExoticWeaponService
    {
       ExoticWeapon newExoticWeapon = new ExoticWeapon();
       newExoticWeapon.setExoticWeaponName(exoticWeapon.getExoticWeaponName());
-      newExoticWeapon.setTalent(exoticWeapon.getTalent());
+      newExoticWeapon.setExoticTalentName(exoticWeapon.getExoticTalentName());
+      newExoticWeapon.setExoticTalentDescription(exoticWeapon.getExoticTalentDescription());
       newExoticWeapon.setWeaponType(exoticWeapon.getWeaponType());
       return exoticweaponrepos.save(newExoticWeapon);
    }
