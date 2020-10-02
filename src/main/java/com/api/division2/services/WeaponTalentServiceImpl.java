@@ -1,6 +1,7 @@
 package com.api.division2.services;
 
 import com.api.division2.models.WeaponTalent;
+import com.api.division2.models.WeaponType;
 import com.api.division2.repositories.WeaponTalentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,7 +34,7 @@ public class WeaponTalentServiceImpl implements WeaponTalentService
 
       newWeaponTalent.setName(weaponTalent.getName());
       newWeaponTalent.setDescription(weaponTalent.getDescription());
-
+      newWeaponTalent.setWeaponTypes(weaponTalent.getWeaponTypes());
       return weapontalentrepos.save(newWeaponTalent);
    }
 }
