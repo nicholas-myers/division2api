@@ -1,5 +1,6 @@
 package com.api.division2.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
@@ -19,6 +20,10 @@ public class WeaponType
 
    @ManyToMany(mappedBy = "weaponTypes")
    private List<WeaponTalent> weaponTalents;
+
+   @OneToMany(mappedBy = "weaponType", cascade = CascadeType.ALL)
+   @JsonIgnore
+   private List<ExoticWeapon> exoticWeapons;
 
    public WeaponType()
    {
