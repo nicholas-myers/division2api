@@ -27,6 +27,10 @@ public class WeaponType
    @JsonIgnoreProperties(value = "weaponType")
    private List<ExoticWeapon> exoticWeapons;
 
+   @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
+   @JsonIgnoreProperties(value = "type")
+   private List<NamedWeapon> namedWeapons;
+
    public WeaponType()
    {
    }
@@ -74,5 +78,15 @@ public class WeaponType
    public void setExoticWeapons(List<ExoticWeapon> exoticWeapons)
    {
       this.exoticWeapons = exoticWeapons;
+   }
+
+   public List<NamedWeapon> getNamedWeapons()
+   {
+      return namedWeapons;
+   }
+
+   public void setNamedWeapons(List<NamedWeapon> namedWeapons)
+   {
+      this.namedWeapons = namedWeapons;
    }
 }
