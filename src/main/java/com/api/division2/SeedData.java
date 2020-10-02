@@ -45,12 +45,43 @@ public class SeedData implements CommandLineRunner
 
       /******* WEAPON TALENTS ********/
       WeaponTalent boomerang = new WeaponTalent("Boomerang", "Critical hits have a 50% chance to return the bullet to the magazine. If a bullet is returned to the magazine, the next shot has 40% increased damage.");
+      List<WeaponType> talentTypes = new ArrayList<>();
+      talentTypes.add(rifle);
+      boomerang.setWeaponTypes(talentTypes);
       boomerang = weaponTalentService.save(boomerang);
       WeaponTalent breadbasket = new WeaponTalent("Breadbasket", "Landing body shots adds a stack of bonus 35% headshot damage to the next headshot for 10 seconds. Max stack is 3.");
+      talentTypes = new ArrayList<>();
+      talentTypes.add(ar);
+      talentTypes.add(rifle);
+      talentTypes.add(mmr);
+      talentTypes.add(smg);
+      talentTypes.add(lmg);
+      talentTypes.add(pistol);
+      talentTypes.add(shotgun);
+      breadbasket.setWeaponTypes(talentTypes);
       breadbasket = weaponTalentService.save(breadbasket);
       WeaponTalent closepersonal = new WeaponTalent("Close and Personal", "Killing a target within 7 meters grants 30% weapon damage for 10 seconds.");
+      talentTypes = new ArrayList<>();
+      talentTypes.add(ar);
+      talentTypes.add(rifle);
+      talentTypes.add(mmr);
+      talentTypes.add(smg);
+      talentTypes.add(lmg);
+      talentTypes.add(pistol);
+      talentTypes.add(shotgun);
+      closepersonal.setWeaponTypes(talentTypes);
       closepersonal = weaponTalentService.save(closepersonal);
       WeaponTalent eyeless = new WeaponTalent("Eyless", "Deal 20% weapon damage to blinded enemies. After 4 kills, applies blind to the next enemy you hit.");
+      talentTypes = new ArrayList<>();
+      talentTypes.add(ar);
+      talentTypes.add(rifle);
+      talentTypes.add(mmr);
+      talentTypes.add(smg);
+      talentTypes.add(lmg);
+      talentTypes.add(pistol);
+      talentTypes.add(shotgun);
+      eyeless.setWeaponTypes(talentTypes);
       eyeless = weaponTalentService.save(eyeless);
+
    }
 }
