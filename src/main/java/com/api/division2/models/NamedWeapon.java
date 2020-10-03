@@ -1,9 +1,11 @@
 package com.api.division2.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 
+@Entity
 @Table(name = "namedweapons")
 public class NamedWeapon
 {

@@ -20,15 +20,15 @@ public class WeaponType
    private String name;
 
    @ManyToMany(mappedBy = "weaponTypes")
-   @JsonIgnoreProperties(value = "weaponTypes")
+   @JsonIgnore
    private List<WeaponTalent> weaponTalents;
 
    @OneToMany(mappedBy = "weaponType", cascade = CascadeType.ALL)
-   @JsonIgnoreProperties(value = "weaponType")
+   @JsonIgnore
    private List<ExoticWeapon> exoticWeapons;
 
    @OneToMany(mappedBy = "type", cascade = CascadeType.ALL)
-   @JsonIgnoreProperties(value = "type")
+   @JsonIgnore
    private List<NamedWeapon> namedWeapons;
 
    public WeaponType()
