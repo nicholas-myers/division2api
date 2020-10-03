@@ -1,11 +1,14 @@
 package com.api.division2;
 
 import com.api.division2.models.ExoticWeapon;
+import com.api.division2.models.NamedWeapon;
 import com.api.division2.models.WeaponTalent;
 import com.api.division2.models.WeaponType;
 import com.api.division2.services.ExoticWeaponService;
+import com.api.division2.services.NamedWeaponService;
 import com.api.division2.services.WeaponTalentService;
 import com.api.division2.services.WeaponTypeService;
+import com.fasterxml.jackson.databind.util.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -26,6 +29,9 @@ public class SeedData implements CommandLineRunner
 
    @Autowired
    ExoticWeaponService exoticWeaponService;
+
+   @Autowired
+   NamedWeaponService namedWeaponService;
 
    @Transactional
    @Override
@@ -87,6 +93,16 @@ public class SeedData implements CommandLineRunner
       talentTypes.add(shotgun);
       eyeless.setWeaponTypes(talentTypes);
       eyeless = weaponTalentService.save(eyeless);
+      WeaponTalent fasthands = new WeaponTalent("Fast Hands", "Critical hits add a stack of 4% reload speed bonus. Max stack is 40.");
+      talentTypes = new ArrayList<>();
+      talentTypes.add(ar);
+      talentTypes.add(rifle);
+      talentTypes.add(mmr);
+      talentTypes.add(smg);
+      talentTypes.add(lmg);
+      talentTypes.add(pistol);
+      talentTypes.add(shotgun);
+      fasthands = weaponTalentService.save(fasthands);
       /********* END WEAPON TALENTS ***********/
       /********* EXOTIC WEAPONS ***********/
       ExoticWeapon bighorn = new ExoticWeapon("The Bighorn", "Big Game Hunter", "When scoped: switches to semi-automatic fire mode, dealing 450% weapon damage with each shot.", ar);
@@ -140,5 +156,8 @@ public class SeedData implements CommandLineRunner
               "Kills refill 50% of your magazine.", smg);
       chatterbox = exoticWeaponService.save(chatterbox);
       /********* END EXOTIC WEAPONS ***********/
+      /********* NAMED WEAPONS *********/
+      NamedWeapon manic = new NamedWeapon("Manic", "Perfectly Overflowing", "Every 2 reloads from empty increases your base magazine capacity by 100%.", "Dark Zone", ar, "AK-47");
+      manic = namedWeaponService.save(manic);
    }
 }
