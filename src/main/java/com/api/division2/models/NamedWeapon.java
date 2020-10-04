@@ -19,18 +19,15 @@ public class NamedWeapon
    private String name;
 
    @NotNull
-   @Column(nullable = false,
-           unique = true)
+   @Column(nullable = false)
    private String talentName;
 
    @NotNull
-   @Column(nullable = false,
-           unique = true)
+   @Column(nullable = false)
    private String talentDescription;
 
    @NotNull
-   @Column(nullable = false,
-           unique = true)
+   @Column(nullable = false)
    private String dropLocation;
 
    @ManyToOne
@@ -38,8 +35,7 @@ public class NamedWeapon
    private WeaponType type;
 
    @NotNull
-   @Column(nullable = false,
-           unique = true)
+   @Column(nullable = false)
    private String variant;
 
    public NamedWeapon()
