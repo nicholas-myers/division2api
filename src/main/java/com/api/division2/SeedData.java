@@ -36,6 +36,9 @@ public class SeedData implements CommandLineRunner
    @Autowired
    GearModService gearModService;
 
+   @Autowired
+   ExoticGearService exoticGearService;
+
    @Transactional
    @Override
    public void run(String[] args)
@@ -738,6 +741,24 @@ public class SeedData implements CommandLineRunner
       explosiveresist = gearModService.save(explosiveresist);
       GearMod eliteprotect = new GearMod("Protection from Elites", "Blue: Defensive");
       eliteprotect = gearModService.save(eliteprotect);
-      /******* GEAR MODS *********/
+      /******* END GEAR MODS *********/
+      /******* EXOTIC GEAR *********/
+      ExoticGear acostabag = new ExoticGear("Acosta's Go-Bag", "Backpack", "One in Hand / Two in the Bag", "Damaging an enemy with a grenade grants +1 skill tier for 15 seconds. Grants overcharge if already at skill tier 6. Cooldown is 60 seconds. / +1 Armor Kit Capacity +3 Grenade Capacity +25% Ammo Capacity +10% Skill Repair +10% Status Effects" );
+      acostabag = exoticGearService.save(acostabag);
+      ExoticGear tardigrade = new ExoticGear("Tardigrade Armor System", "Chest", "Ablative Nano-Plating", "Whenever your or any ally's armor breaks, they gain 80% of your armor as bonus armor for 10 seconds. Cooldown per ally: 45 seconds Killing an enemy with your specialization weapon removes this cooldown for all allies." );
+      tardigrade = exoticGearService.save(tardigrade);
+      ExoticGear btsugloves = new ExoticGear("BTSU Gloves", "Gloves", "Transference Overclock", "Detonating a Hive refreshes all allies' skill cooldowns and grants them overcharge for 15 seconds. Allies receiving this effect are unable to benefit from it again for 120 seconds." );
+      btsugloves = exoticGearService.save(btsugloves);
+      ExoticGear dodgecityholster = new ExoticGear("Dodge City Gunslinger's Holster", "Holster", "Quick Draw", "While your pistol is holstered, gain a stacking buff every 0.5 seconds, up to 100. When you swap to it, your first shot consumes the buff and deals +10% damage per stack. Requires Pistol Equipped" );
+      dodgecityholster = exoticGearService.save(dodgecityholster);
+      ExoticGear imperialdynasty = new ExoticGear("Imperial Dynasty", "Holster", "Dragon's Glare", "While in combat, applies burn to the enemy closest to you within 20 meters. Cooldown: 40 seconds." );
+      imperialdynasty = exoticGearService.save(imperialdynasty);
+      ExoticGear ninjakneepads = new ExoticGear("Ninja Bike Messenger Kneepads", "Kneepads", "Parkour!", "Performing a cover to cover or vaulting reloads your drawn weapon." );
+      ninjakneepads = exoticGearService.save(ninjakneepads);
+      ExoticGear sawyerskeepads = new ExoticGear("Sawyer's Kneepads", "Kneepads", "Grace Under Fire", "Cannot be staggered by explosions. Staying in cover without firing for 6 - 12 seconds provides damage immunity while aiming for 1 - 2 seconds." );
+      sawyerskeepads = exoticGearService.save(sawyerskeepads);
+      ExoticGear coyotemask = new ExoticGear("Coyote's Mask", "Mask", "Pack Instincts", "You and all allies gain a bonus based on the distance of the last enemy you hit. 0 - 15 meters: +25% critical hit damage. 15 - 25 meters: +10% critical hit damage and +10% critical hit chance. 25 meters+: 25% critical hit chance." );
+      coyotemask = exoticGearService.save(coyotemask);
+      /******* END EXOTIC GEAR *********/
    }
 }
