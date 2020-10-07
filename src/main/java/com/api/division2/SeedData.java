@@ -33,6 +33,9 @@ public class SeedData implements CommandLineRunner
    @Autowired
    GearTalentService gearTalentService;
 
+   @Autowired
+   GearModService gearModService;
+
    @Transactional
    @Override
    public void run(String[] args)
@@ -686,5 +689,55 @@ public class SeedData implements CommandLineRunner
       GearTalent tagteam = new GearTalent("Tag Team", "The last enemy you have damaged with a skill is marked. Dealing weapon damage that enemy consumes the mark to reduce active cooldowns by 4s. Cooldown: 4s.", "Chest");
       tagteam = gearTalentService.save(tagteam);
       /******* END GEAR TALENTS *********/
+      /******* GEAR MODS *********/
+      GearMod headdamage = new GearMod("Headshot Damage", "Red: Offensive");
+      headdamage = gearModService.save(headdamage);
+      GearMod criticalrange = new GearMod("Critical Range", "Red: Offensive");
+      criticalrange = gearModService.save(criticalrange);
+      GearMod optimalrange = new GearMod("Optimal Range", "Red: Offensive");
+      optimalrange = gearModService.save(optimalrange);
+      GearMod weaponhandle = new GearMod("Weapon Handling", "Red: Offensive");
+      weaponhandle = gearModService.save(weaponhandle);
+      GearMod damagearmor = new GearMod("Damage to Armor", "Red: Offensive");
+      damagearmor = gearModService.save(damagearmor);
+      GearMod damagehealth = new GearMod("Damage to Health", "Red: Offensive");
+      damagehealth = gearModService.save(damagehealth);
+      GearMod explosivedamage = new GearMod("Explosive Damage", "Yellow: Utility");
+      explosivedamage = gearModService.save(explosivedamage);
+      GearMod grenadedamage = new GearMod("Grenade Damage", "Yellow: Utility");
+      grenadedamage = gearModService.save(grenadedamage);
+      GearMod bleeddamage = new GearMod("Bleed Damage", "Yellow: Utility");
+      bleeddamage = gearModService.save(bleeddamage);
+      GearMod burndamage = new GearMod("Burn Damage", "Yellow: Utility");
+      burndamage = gearModService.save(burndamage);
+      GearMod reloadspeed = new GearMod("Reload Speed", "Yellow: Utility");
+      reloadspeed = gearModService.save(reloadspeed);
+      GearMod outgoinghealing = new GearMod("Extra Outgoing Healing", "Yellow: Utility");
+      outgoinghealing = gearModService.save(outgoinghealing);
+      GearMod armorkill = new GearMod("Armor on Kill", "Blue: Defensive");
+      armorkill = gearModService.save(armorkill);
+      GearMod armorregeneration = new GearMod("Armor /sec Regeneration", "Blue: Defensive");
+      armorregeneration = gearModService.save(armorregeneration);
+      GearMod incominghealing = new GearMod("Extra Income Healing", "Blue: Defensive");
+      incominghealing = gearModService.save(incominghealing);
+      GearMod healthregen = new GearMod("Health Regeneration", "Blue: Defensive");
+      healthregen = gearModService.save(healthregen);
+      GearMod skillhealth = new GearMod("Skill Health", "Blue: Defensive");
+      skillhealth = gearModService.save(skillhealth);
+      GearMod totalarmor = new GearMod("Total Armor", "Blue: Defensive");
+      totalarmor = gearModService.save(totalarmor);
+      GearMod bleedresist = new GearMod("Bleed Resistance", "Blue: Defensive");
+      bleedresist = gearModService.save(bleedresist);
+      GearMod blinddeafresist = new GearMod("Bleed/Deaf Resistance", "Blue: Defensive");
+      blinddeafresist = gearModService.save(blinddeafresist);
+      GearMod burnresist = new GearMod("Burn Resistance", "Blue: Defensive");
+      burnresist = gearModService.save(burnresist);
+      GearMod disorientresist = new GearMod("Disorient Resistance", "Blue: Defensive");
+      disorientresist = gearModService.save(disorientresist);
+      GearMod explosiveresist = new GearMod("Explosive Resistance", "Blue: Defensive");
+      explosiveresist = gearModService.save(explosiveresist);
+      GearMod eliteprotect = new GearMod("Protection from Elites", "Blue: Defensive");
+      eliteprotect = gearModService.save(eliteprotect);
+      /******* GEAR MODS *********/
    }
 }
