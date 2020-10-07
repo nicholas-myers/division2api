@@ -30,6 +30,9 @@ public class SeedData implements CommandLineRunner
    @Autowired
    GearAttributeService gearAttributeService;
 
+   @Autowired
+   GearTalentService gearTalentService;
+
    @Transactional
    @Override
    public void run(String[] args)
@@ -679,6 +682,9 @@ public class SeedData implements CommandLineRunner
       GearAttribute statuseffects = new GearAttribute("Status Effects", "10%", "Yellow: Utility");
       statuseffects = gearAttributeService.save(statuseffects);
       /******* END GEAR ATTRIBUTES *********/
-
+      /******* GEAR TALENTS *********/
+      GearTalent tagteam = new GearTalent("Tag Team", "The last enemy you have damaged with a skill is marked. Dealing weapon damage that enemy consumes the mark to reduce active cooldowns by 4s. Cooldown: 4s.", "Chest");
+      tagteam = gearTalentService.save(tagteam);
+      /******* END GEAR TALENTS *********/
    }
 }
