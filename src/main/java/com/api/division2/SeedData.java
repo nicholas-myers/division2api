@@ -1,13 +1,7 @@
 package com.api.division2;
 
-import com.api.division2.models.ExoticWeapon;
-import com.api.division2.models.NamedWeapon;
-import com.api.division2.models.WeaponTalent;
-import com.api.division2.models.WeaponType;
-import com.api.division2.services.ExoticWeaponService;
-import com.api.division2.services.NamedWeaponService;
-import com.api.division2.services.WeaponTalentService;
-import com.api.division2.services.WeaponTypeService;
+import com.api.division2.models.*;
+import com.api.division2.services.*;
 import com.fasterxml.jackson.databind.util.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -32,6 +26,9 @@ public class SeedData implements CommandLineRunner
 
    @Autowired
    NamedWeaponService namedWeaponService;
+
+   @Autowired
+   GearAttributeService gearAttributeService;
 
    @Transactional
    @Override
@@ -649,5 +646,39 @@ public class SeedData implements CommandLineRunner
               "PP-19"
       );
       darkwinter = namedWeaponService.save(darkwinter);
+      /********* END NAMED WEAPONS *********/
+      /********* GEAR ATTRIBUTES **********/
+      GearAttribute skilltier = new GearAttribute("Skill Tier", "1", "Core");
+      skilltier = gearAttributeService.save(skilltier);
+      GearAttribute armor = new GearAttribute("Armor", "170,000", "Core");
+      armor = gearAttributeService.save(armor);
+      GearAttribute weapondamage = new GearAttribute("Weapon Damage", "15%", "Core");
+      weapondamage = gearAttributeService.save(weapondamage);
+      GearAttribute critchance = new GearAttribute("Crit Hit Chance", "6%", "Red: Offensive");
+      critchance = gearAttributeService.save(critchance);
+      GearAttribute critdamage = new GearAttribute("Crit Hit Damage", "10%", "Red: Offensive");
+      critdamage = gearAttributeService.save(critdamage);
+      GearAttribute headshotdamage = new GearAttribute("Headshot Damage", "12%", "Red: Offensive");
+      headshotdamage = gearAttributeService.save(headshotdamage);
+      GearAttribute weaponhandling = new GearAttribute("Weapon Handling", "14%", "Red: Offensive");
+      weaponhandling = gearAttributeService.save(weaponhandling);
+      GearAttribute armorregen = new GearAttribute("Armor Regeneration", "4,925", "Blue: Defensive");
+      armorregen = gearAttributeService.save(armorregen);
+      GearAttribute explosiveresistance = new GearAttribute("Explosive Resistance", "10%", "Blue: Defensive");
+      explosiveresistance = gearAttributeService.save(explosiveresistance);
+      GearAttribute hazardprotect = new GearAttribute("Hazard Protection", "10%", "Blue: Defensive");
+      hazardprotect = gearAttributeService.save(hazardprotect);
+      GearAttribute health = new GearAttribute("Health", "18,935", "Blue: Defensive");
+      health = gearAttributeService.save(health);
+      GearAttribute skilldamage = new GearAttribute("Skill Damage", "10%", "Yellow: Utility");
+      skilldamage = gearAttributeService.save(skilldamage);
+      GearAttribute skillhaste = new GearAttribute("Skill Haste", "12%", "Yellow: Utility");
+      skillhaste = gearAttributeService.save(skillhaste);
+      GearAttribute skillrepair = new GearAttribute("Skill Repair", "20%", "Yellow: Utility");
+      skillrepair = gearAttributeService.save(skillrepair);
+      GearAttribute statuseffects = new GearAttribute("Status Effects", "10%", "Yellow: Utility");
+      statuseffects = gearAttributeService.save(statuseffects);
+      /******* END GEAR ATTRIBUTES *********/
+
    }
 }
