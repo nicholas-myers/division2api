@@ -39,6 +39,9 @@ public class SeedData implements CommandLineRunner
    @Autowired
    ExoticGearService exoticGearService;
 
+   @Autowired
+   BrandSetService brandSetService;
+
    @Transactional
    @Override
    public void run(String[] args)
@@ -760,5 +763,46 @@ public class SeedData implements CommandLineRunner
       ExoticGear coyotemask = new ExoticGear("Coyote's Mask", "Mask", "Pack Instincts", "You and all allies gain a bonus based on the distance of the last enemy you hit. 0 - 15 meters: +25% critical hit damage. 15 - 25 meters: +10% critical hit damage and +10% critical hit chance. 25 meters+: 25% critical hit chance." );
       coyotemask = exoticGearService.save(coyotemask);
       /******* END EXOTIC GEAR *********/
+      /******* BRAND SETS *********/
+      BrandSet fiveeleven = new BrandSet("5.11 Tactical", "Armor", "10% Health", "15% Extra Incoming Healing", "10% Hazard Protection");
+      fiveeleven = brandSetService.save(fiveeleven);
+      BrandSet airaldi = new BrandSet("Airaldi Holdings", "Weapon Damage", "10% Marksman Rifle Damage", "10% Headshot Damage", "5% Damage to Armor");
+      airaldi = brandSetService.save(airaldi);
+      BrandSet alps = new BrandSet("Alps Summit", "Skill Tier", "15% Skill Repair", "20% Skill Duration", "10% Cooldown Reduction");
+      alps = brandSetService.save(alps);
+      BrandSet badger = new BrandSet("Badger Tuff", "Armor", "10% Shotgun Damage", "5% Total Armor", "10% Armor on Kill");
+      badger = brandSetService.save(badger);
+      BrandSet ceska = new BrandSet("Česká Výroba", "Weapon Damage", "10% Critical Hit Chance", "10% Hazard Protection", "10% Health");
+      ceska = brandSetService.save(ceska);
+      BrandSet chinalight = new BrandSet("China Light", "Skill Tier", "15% Explosive Damage", "10% Cooldown Reduction", "10% Status Effects");
+      chinalight = brandSetService.save(chinalight);
+      BrandSet dandh = new BrandSet("Douglas & Harding", "Weapon Damage", "20% Pistol Damage", "10% Stability", "10% Accuracy");
+      dandh = brandSetService.save(dandh);
+      BrandSet fenris = new BrandSet("Fenris Group", "Weapon Damage", "10% Assault Rifle Damage", "10% Reload Speed", "10% Stability");
+      fenris = brandSetService.save(fenris);
+      BrandSet gilaguard = new BrandSet("Gila Guard", "Armor", "5% Total Armor", "10% Health", "1% Armor /sec Regeneration");
+      gilaguard = brandSetService.save(gilaguard);
+      BrandSet golangear = new BrandSet("Golan Gear", "Armor", "10% Status Effects", "1% Armor /sec Regeneration", "5% Total Armor");
+      golangear = brandSetService.save(golangear);
+      BrandSet grupo = new BrandSet("Grupo Sombra", "Weapon Damage", "15% Critical Hit Damage", "15% Explosive Damage", "10% Headshot Damage");
+      grupo = brandSetService.save(grupo);
+      BrandSet hanacorp = new BrandSet("Hana-U Corp", "Skill Tier", "10% Cooldown Reduction", "10% Skill Damage", "5% Weapon Damage");
+      hanacorp = brandSetService.save(hanacorp);
+      BrandSet murakami = new BrandSet("Murakami Industries", "Skill Tier", "20% Skill Duration", "15% Skill Repair", "10% Skill Damage");
+      murakami = brandSetService.save(murakami);
+      BrandSet overlord = new BrandSet("Overlord Armaments", "Weapon Damage", "10% Rifle Damage", "10% Accuracy", "10% Weapon Handling");
+      overlord = brandSetService.save(overlord);
+      BrandSet petrov = new BrandSet("Petrov Defense", "Weapon Damage", "10% LMG Damage", "10% Weapon Handling", "20% Ammo Capacity");
+      petrov = brandSetService.save(petrov);
+      BrandSet providence = new BrandSet("Providence Defense", "Weapon Damage", "10% Headshot Damage", "10% Critical Hit Chance", "10% Critical Hit Damage");
+      providence = brandSetService.save(providence);
+      BrandSet randk = new BrandSet("Richter & Kaiser", "Skill Tier", "15% Extra Incoming Healing", "10% Explosive Resistance", "15% Skill Repair");
+      randk = brandSetService.save(randk);
+      BrandSet sokolov = new BrandSet("Sokolov Concern", "Weapon Damage", "10% SMG Damage", "15% Critical Hit Damage", "10% Critical Hit Damage");
+      sokolov = brandSetService.save(sokolov);
+      BrandSet wyvern = new BrandSet("Wyvern Wear", "Skill Tier", "10% Skill Damage", "10% Status Effects", "20% Skill Duration");
+      wyvern = brandSetService.save(wyvern);
+      BrandSet yaahl = new BrandSet("Yaahl Gear", "Armor", "10% Hazard Protection", "5% Weapon Damage", "40% Pulse Resistance");
+      yaahl = brandSetService.save(yaahl);
    }
 }
